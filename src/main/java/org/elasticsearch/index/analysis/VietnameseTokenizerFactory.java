@@ -19,9 +19,12 @@ import org.apache.lucene.analysis.vi.VietnameseTokenizer;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.env.Environment;
 import org.elasticsearch.index.IndexSettings;
+import org.elasticsearch.SpecialPermission;
+import java.io.IOException;
 
 import java.security.AccessController;
 import java.security.PrivilegedAction;
+import java.security.PrivilegedActionException;
 
 /**
  * @author duydo
@@ -31,7 +34,13 @@ public class VietnameseTokenizerFactory extends AbstractTokenizerFactory {
 
     public VietnameseTokenizerFactory(IndexSettings indexSettings, Environment environment, String name, Settings settings) {
         super(indexSettings, settings, name);
+        SecurityManager sm = System.getSecurityManager();
+        if (sm != null) {
+            // unprivileged code such as scripts do not have SpecialPermission
+            sm.checkPermission(new SpecialPermission());
+        }
         tokenizer = AccessController.doPrivileged((PrivilegedAction<me.duydo.vi.Tokenizer>) me.duydo.vi.Tokenizer::new);
+
     }
 
     @Override

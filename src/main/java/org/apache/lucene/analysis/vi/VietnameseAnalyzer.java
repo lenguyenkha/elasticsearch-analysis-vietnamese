@@ -16,10 +16,13 @@ package org.apache.lucene.analysis.vi;
 
 import org.apache.lucene.analysis.*;
 
+import java.io.IOException;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
+import java.security.PrivilegedActionException;
 import java.util.Arrays;
 import java.util.List;
+import org.elasticsearch.SpecialPermission;
 
 /**
  * @author duydo
