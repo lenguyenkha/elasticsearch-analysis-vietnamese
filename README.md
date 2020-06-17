@@ -1,14 +1,14 @@
 Vietnamese Analysis Plugin for Elasticsearch
 ========================================
 
-Vietnamese Analysis plugin integrates Vietnamese language analysis into Elasticsearch.
+Vietnamese Analysis plugin integrates Vietnamese language analysis into Elasticsearch (7.7.0). Base on elasticsearch-analysis-vietnamese by Duy Do 
 
 The plugin provides the `vi_analyzer` analyzer and `vi_tokenizer` tokenizer. The `vi_analyzer` is composed of the `vi_tokenizer` tokenizer, the `lowercase` and `stop` filter.
 
 
-## Installation on Elasticsearch 5.x
+## Installation on Elasticsearch 7.x.x
 
-In order to install the plugin, choose a version in [releases](https://github.com/duydo/elasticsearch-analysis-vietnamese/releases) page then run:
+In order to install the plugin, choose a version in [releases](https://github.com/lenguyenkha/elasticsearch-analysis-vietnamese/releases) page then run:
 
 ```sh
 bin/elasticsearch-plugin install link/to/binary/version
@@ -68,7 +68,8 @@ If testing failed, consider restarting the elastic service to reload the plugin.
 ## Compatible Versions
 | Vietnamese Analysis Plugin | Elasticsearch |
 | -------------------------- | ------------- |
-| master                     | 7.3.1         |
+| master                     | 7.7.0         |
+| 7.7.0                      | 7.7.0         | 
 | 7.5.1                      | 7.5.1         |   
 | 7.4.1                      | 7.4.1         |   
 | 7.4.0                      | 7.4.0         |   
@@ -98,6 +99,7 @@ If testing failed, consider restarting the elastic service to reload the plugin.
 
 ## Thanks to
 - [Lê Hồng Phương](http://mim.hus.vnu.edu.vn/phuonglh/) for his VnTokenizer library
+- [Duy Do](http://duydo.me) for his Elasticsearch Vietnamese Analysis library
 - [JetBrains](https://www.jetbrains.com) has provided a free license for their great tool: [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
 ## License
