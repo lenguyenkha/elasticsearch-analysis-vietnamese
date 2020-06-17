@@ -14,7 +14,19 @@ In order to install the plugin, choose a version in [releases](https://github.co
 bin/elasticsearch-plugin install link/to/binary/version
 ```
 ## Build from Source
-Check this post: [How to build Elasticsearch Vietnamese Analysis Plugin](http://duydo.me/how-to-build-elasticsearch-vietnamese-analysis-plugin/)
+```
+Clone vn-nlp from: https://github.com/lenguyenkha/vn-nlp-libraries
+
+Build by maven: mvn install
+
+Clone vi-analyzer 
+
+Run: cd elasticsearch-analysis-vietnamese
+
+Build by maven: mvn package
+
+Check version jar in release.
+```
 
 ## Sample Usage
 
